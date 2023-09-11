@@ -19,11 +19,14 @@ class RegisterActivity : AppCompatActivity() {
 
         registerBinding.converterButton.setOnClickListener {
             Log.d("button", "clicked")
-            val email = registerBinding.CelsiusEditText.text.toString()
-            registerBinding.infoTextView.text = email
-            var info = registerBinding.infoTextView.text.toString()
+            val Celsius = registerBinding.CelsiusEditText.text.toString()
 
+            var kelvin = Celsius.toFloat() + 273.15
+
+            registerBinding.infoTextView.text = kelvin.toString()
+            var info = registerBinding.infoTextView.text.toString()
             registerBinding.infoTextView.text =info
+            Toast.makeText(this,"Se ha convertido los grados a kelvin",Toast.LENGTH_LONG).show()
         }
     }
 }
